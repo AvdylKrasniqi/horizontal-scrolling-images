@@ -176,7 +176,7 @@
 <script type="text/javascript">
 	function scrollItLeft(id, i){
 		$("#photo").attr("src", $(id).children().attr("src"));
-		$("#scrollDiv").stop().animate({scrollLeft:($(id)[0].offsetLeft <= 3*$("#scrollDiv").width()/4) ? $(id)[0].offsetLeft - $("#scrollDiv").width()/2 : $(id)[0].offsetLeft - $("#scrollDiv").width()/4}, 500, 'swing', function() { 
+		$("#scrollDiv").stop().animate({scrollLeft:$(id)[0].offsetLeft - $("#scrollDiv").width()/2}, 500, 'swing', function() { 
 		   console.log("scrolled");
 		});
 	}
