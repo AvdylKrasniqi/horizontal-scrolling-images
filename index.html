@@ -6,9 +6,23 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
+<style>
+	#scrollDiv img { 
+		-webkit-filter: grayscale(200%) ; /* Safari 6.0 - 9.0 */
+  		filter: grayscale(200%);
+  		transform: scale(1.0);
+  		transition-property: transform;
+  		transition-duration: 0.5s;
+	}
+	#scrollDiv .active {
+		-webkit-filter: none !important; /* Safari 6.0 - 9.0 */
+  		filter: none !important;
+  		transform: scale(1.2);
+	}
+</style>
 
 <img id="photo" style="height: 300px; width: 300px;">
-<div id="scrollDiv" style="overflow-x: hidden; height: 100px; display: -webkit-box;">
+<div id="scrollDiv" style="overflow-x: hidden; height: 100px; width: 500px; display: -webkit-box;">
 	<div style="margin: 0 5px; height: 50px; width: 50px;" onclick="scrollItLeft(this,1)">
 	<img style="width: 100%;" src="https://picsum.photos/300/310"/>1
 	</div>
@@ -175,10 +189,10 @@
 </div>
 <script type="text/javascript">
 	function scrollItLeft(id, i){
+		$(".active").removeClass("active");
 		$("#photo").attr("src", $(id).children().attr("src"));
-		$("#scrollDiv").stop().animate({scrollLeft:$(id)[0].offsetLeft - $("#scrollDiv").width()/2}, 500, 'swing', function() { 
-		   console.log("scrolled");
-		});
+		$(id).children().addClass("active");
+		$("#scrollDiv").stop().animate({scrollLeft:$(id)[0].offsetLeft - $("#scrollDiv").width()/2}, 500, 'swing');
 	}
 </script>
 </body>
