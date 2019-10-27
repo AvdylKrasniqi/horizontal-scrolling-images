@@ -1,4 +1,4 @@
-# horizontal-scrolling-images
+# images-horizontal-scroller
 
 A basic horizontal scroller for images. <br/>
-Live demo: https://jsfiddle.net/0rqbyz94/
+Live demo: https://avdylkrasniqi.github.io/horizontal-scrolling-images/
