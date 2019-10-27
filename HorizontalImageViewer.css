@@ -1,0 +1,120 @@
+.fileViewer {
+		background: #000000e3;
+	    width: 100%;
+	    height: 100vh;
+	    margin: 0;
+	    padding: 0;
+	    position: fixed;
+	    top: 0;
+	    left: 0;
+	    outline: none;
+	}
+	.fileViewer .fileDisplay {
+	    width: 100%;
+	    text-align: center;
+	    height: calc(100vh - 180px);
+	    margin: 0;
+	    padding: 50px 0;
+	}
+	.fileViewer .fileDisplay img {
+  		max-height: 100%;
+  		max-width: 100%;
+	}
+	.fileViewer .scroller {
+		overflow-x: scroll;
+		overflow-y: hidden;
+	    height: 60px;
+	    width: 98%;
+	    display: -webkit-box;
+	    position: fixed;
+	    bottom: 0;
+	    left: 0;
+	    border-top: 2px solid #66666650;
+	    padding: 10px 0px 0px 0px;
+	    margin-left: 1%;
+	}
+	.fileViewer .rightArrow {
+		background: red;
+		padding: 10px;
+	    position: fixed;
+	    right: 0;
+	    margin-top: calc(50vh - 30px);
+	    text-align: center;
+	    color: white;
+	    top: 0;
+	    cursor: pointer;
+	}
+	.fileViewer .leftArrow {
+		background: red;
+		padding: 10px;
+	    position: fixed;
+	    left: 0;
+	    margin-top: calc(50vh - 30px);
+	    text-align: center;
+	    color: white;
+	    top: 0;
+	    cursor: pointer;
+	}
+	.fileViewer .scroller img { 
+		-webkit-filter: grayscale(200%) ; /* Safari 6.0 - 9.0 */
+  		filter: grayscale(200%);
+  		-webkit-transform: scale(1.0);
+  		    -ms-transform: scale(1.0);
+  		        transform: scale(1.0);
+  		-webkit-transition-property: -webkit-transform;
+  		transition-property: -webkit-transform;
+  		-o-transition-property: transform;
+  		transition-property: transform;
+  		transition-property: transform, -webkit-transform;
+  		-webkit-transition-duration: 0.5s;
+  		     -o-transition-duration: 0.5s;
+  		        transition-duration: 0.5s;
+  		padding: 0 10px;
+		cursor: pointer;
+  		float: left;
+	}
+	.fileViewer .scroller .active {
+		-webkit-filter: none !important; /* Safari 6.0 - 9.0 */
+  		filter: none !important;
+  		-webkit-transform: scale(1.2);
+  		    -ms-transform: scale(1.2);
+  		        transform: scale(1.2);
+	}
+	
+	.fileViewer .scroller span {
+	    float: right;
+	    position: absolute;
+	    background: red;
+	    z-index: 1;
+	    margin-left: -15px;
+	    color: white;
+		cursor: pointer;
+	}
+	
+	.fileViewer .closer {
+		position: fixed;
+		top: 0;
+		right: 0;
+		padding: 10px;
+		color: white;
+		background: red;
+		cursor: pointer;
+	}
+	@media (min-width:961px){
+		.fileViewer .scroller {
+			margin-bottom: 3px;
+			/*-- Firefox -- */
+			scrollbar-width: thin;
+			scrollbar-color: #666 transparent;
+		}
+		.fileViewer .scroller::-webkit-scrollbar {
+			height: 2px;
+		}
+		.fileViewer .scroller::-webkit-scrollbar-track {
+			background: transparent;
+		}
+			 
+		.fileViewer .scroller::-webkit-scrollbar-thumb {
+			background: #666; 
+		}
+	}
